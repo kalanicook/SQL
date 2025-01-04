@@ -1,4 +1,5 @@
--- SQL script to create the Superstore table used for portfolio analysis.
+# This project utilizes the following superstore data:
+
 CREATE TABLE superstore (
     item_id INTEGER PRIMARY KEY,
     item_name TEXT,
@@ -25,6 +26,8 @@ VALUES
     (13, 'Slow Cooker', 'Appliances', 49.95, 30, 4.7),
     (14, 'Cutlery Set', 'Kitchen Supplies', 34.50, 40, 4.4),
     (15, 'Cozy Throw Blanket', 'Furnishings', 24.99, 100, 4.2);
+
+# For this project I used SQL to query the Superstore database & get information on the following prompts:
 
 -- Write a SQL query that orders the items by price.
 SELECT item_name, price
