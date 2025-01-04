@@ -26,3 +26,35 @@ VALUES
     (14, 'Cutlery Set', 'Kitchen Supplies', 34.50, 40, 4.4),
     (15, 'Cozy Throw Blanket', 'Furnishings', 24.99, 100, 4.2);
 
+-- Write a SQL query that orders the items by price.
+SELECT item_name, price
+FROM superstore
+GROUP BY item_name
+ORDER BY price desc; 
+
+-- Write your own SQL query that will show a statistic about the item prices, like a sum, average, minimum, maximum, or count.
+SELECT SUM(price) AS total_price,
+AVG(price) AS average_price,
+MIN(price) AS min_price,
+MAX(price) AS max_price,
+COUNT(price) AS item_count,
+item_name
+FROM superstore
+GROUP BY item_name; 
+
+-- Write your own SQL query that will show a statistic about the price for items in the category of "Kitchen Supplies"
+SELECT price, item_name, category
+FROM superstore
+WHERE category = 'Kitchen Supplies';
+
+-- What are the three most expensive items?
+SELECT item_name, price
+FROM superstore
+ORDER BY price desc
+LIMIT 3;
+
+-- What is the price range (max - min) per category?
+SELECT category,
+MAX(price) - MIN(price) AS price_range
+FROM superstore
+GROUP BY category;
